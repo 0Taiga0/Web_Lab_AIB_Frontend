@@ -71,7 +71,7 @@ your code in this place
 < Server: ESF
 < X-XSS-Protection: 0
 < X-Frame-Options: SAMEORIGIN
-<
+
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.1 301 Moved Permanently
 Content-Type: application/binary
 X-Content-Type-Options: nosniff

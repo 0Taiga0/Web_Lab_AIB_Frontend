@@ -7,7 +7,7 @@ ___________________________________________________
 ### VS-Code
 ```shell
 Connected to code.visualstudio.com (13.107.246.44) port 443 (#0) - IP адрес и порт WEB сервера
-using HTTP/1.x
+using HTTP/1.x                                                   - Версия HTTP
 GET / HTTP/1.1                                                   
 Host: code.visualstudio.com                                      - Значение хоста ресурса
 User-Agent: curl/8.1.2                                           - Используемый браузер
@@ -18,18 +18,17 @@ Date: Wed, 06 Sep 2023 19:08:05 GMT                              - Дата об
 Content-Type: text/html; charset=utf-8                           - Формат данных
 Content-Length: 50211                                            - Размер отправляемого сообщения в байтах
 Connection: keep-alive                                           - keep-alive: соединение остается открытым
-ETag: W/"c423-s5+tqgx/VoMgTj/GLd93PA9N3Yc"
-Content-Security-Policy: frame-ancestors 'self'                  
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
+ETag: W/"c423-s5+tqgx/VoMgTj/GLd93PA9N3Yc"                       - Идентификатор конкретной версии ресурса
+Content-Security-Policy: frame-ancestors 'self'                  - Управляет ресурсами которые разрешено загружать user agent            
+X-Frame-Options: SAMEORIGIN                                      - Указывает, следует ли разрешить браузеру отображать страницу в <frame>, <iframe>, <embed> или <object>.
+X-XSS-Protection: 1; mode=block                                  - Включает фильтрацию межсайтовых сценариев.
+X-Content-Type-Options: nosniff                                  - Отключает MIME
 X-Content-Type-Options: nosniff
-X-Content-Type-Options: nosniff
-Strict-Transport-Security: max-age=31536000; includeSubDomains
+Strict-Transport-Security: max-age=31536000; includeSubDomains   - Принудительное подключение с использованием HTTPS вместо HTTP.
 Strict-Transport-Security: max-age=31536000
-X-Powered-By: ASP.NET
+X-Powered-By: ASP.NET                                            - Может устанавливаться хостинговыми средами или другими фреймворками и содержать инф о них
 x-azure-ref: 20230906T190805Z-tf0vmb0g091tx824hr7ua0st2n0000000an0000000015k8p
 X-Cache: CONFIG_NOCACHE
-Accept-Ranges: bytes
 ```
 ### RGUPS
 ```shell
@@ -44,12 +43,12 @@ HTTP/1.1 200 OK
 Server: nginx/1.19.1
 Date: Thu, 07 Sep 2023 09:31:21 GMT
 Content-Type: text/html; charset=utf-8
-Transfer-Encoding: chunked
+Transfer-Encoding: chunked                                                         - Данные передаются в виде серии блоков.
 Connection: keep-alive
 X-Powered-By: ProcessWire CMS
-Set-Cookie: wire=aee3aa42a2bbeff42e46de58ef8ce8a9; path=/; HttpOnly; SameSite=Lax
-Expires: Thu, 19 Nov 1981 08:52:00 GMT
-Cache-Control: no-store, no-cache, must-revalidate
+Set-Cookie: wire=aee3aa42a2bbeff42e46de58ef8ce8a9; path=/; HttpOnly; SameSite=Lax  -Отправляйте файлы cookie с сервера пользовательскому агенту.
+Expires: Thu, 19 Nov 1981 08:52:00 GMT                                             - Дата/время, после которого ответ считается устаревшим.
+Cache-Control: no-store, no-cache, must-revalidate                                  
 Pragma: no-cache
 Vary: Accept-Encoding
 
