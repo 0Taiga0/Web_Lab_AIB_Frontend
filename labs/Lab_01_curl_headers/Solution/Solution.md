@@ -23,7 +23,7 @@ Content-Length: 50211                                            - Размер 
 Connection: keep-alive                                           - keep-alive: соединение остается открытым
 ETag: W/"c423-s5+tqgx/VoMgTj/GLd93PA9N3Yc"                       - Идентификатор конкретной версии ресурса
 Content-Security-Policy: frame-ancestors 'self'                  - Управляет ресурсами которые разрешено загружать user agent            
-X-Frame-Options: SAMEORIGIN                                      - Указывает, следует ли разрешить браузеру отображать страницу в frame, iframe, embed или object.
+X-Frame-Options: SAMEORIGIN                                      - Разрешить браузеру отображать страницу в frame, iframe, embed или object.
 X-XSS-Protection: 1; mode=block                                  - Включает фильтрацию межсайтовых сценариев.
 X-Content-Type-Options: nosniff                                  - Отключает MIME
 X-Content-Type-Options: nosniff
