@@ -19,7 +19,7 @@ function task2() {
 
     let fruits = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
 
-    console.log(fruits.join('\n'))
+    console.log(fruits.join('\n'));
 
     fruits.forEach(fruit => {
         switch (fruit) {
@@ -53,12 +53,12 @@ function task3() {
     let salaryWorker = parseInt(prompt('Введите зарплату на человека: ', undefined));
 
     while (isNaN(countWorkers)) {
-        alert('Введено неверное количество человек!')
+        alert('Введено неверное количество человек!');
         countWorkers = parseInt(prompt('Введите кол-во человек ', undefined));
     }
 
     while (isNaN(salaryWorker)) {
-        alert('Введена неверная зарплата на человека!')
+        alert('Введена неверная зарплата на человека!');
         salaryWorker = parseInt(prompt('Введите зарплату на человека: ', undefined));
     }
 
@@ -88,7 +88,7 @@ function task4() {
 
         if (student.rate < 4) badStudents.push(student);
 
-        meanRate.push(student.rate)
+        meanRate.push(student.rate);
     })
 
     console.log(`Средняя оценка: ${meanRate.reduce((a, b) => a + b) / meanRate.length}`);
@@ -103,9 +103,9 @@ function task4() {
     }
 }
 
-task1()
-task2()
-task3()
-task4()
+task1();
+task2();
+task3();
+task4();
 
 // Задание 5 исправлено непосредственно
