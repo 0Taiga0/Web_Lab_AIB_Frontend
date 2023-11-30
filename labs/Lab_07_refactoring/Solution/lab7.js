@@ -97,7 +97,7 @@ function task4() {
     if (badStudents.length > 0) {
         badStudents.forEach(student => {
             console.log(`ФИО: ${student.FIO}, Оценка: ${student.rate}`);
-        })
+        });
     } else {
         console.log('Все студенты хорошие!');
     }
