@@ -40,6 +40,15 @@ body {
     border: 1.5px solid black;
 }
 
+.color-box {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 300px;
+    width: 300px;
+    margin-left: 10px;
+    border: 1.5px solid black;
+}
+
 .generated {
     width: 98%;
     height: 320px;
@@ -47,6 +56,8 @@ body {
     margin: 0 auto;
     margin-top: 35px;
     display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .generate {
@@ -58,4 +69,14 @@ body {
     background-color: dodgerblue;
     color: white;
     border-radius: 5px;
+}
+
+.scroller {
+    margin-top: 10px;
+    display: none;
+    justify-content: center;
+}
+
+.scroller button {
+    margin-left: 10px;
 }

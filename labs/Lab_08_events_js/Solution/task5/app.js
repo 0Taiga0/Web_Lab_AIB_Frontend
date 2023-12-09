@@ -1,7 +1,7 @@
 red.oninput = green.oninput = blue.oninput = fieldValidation;
-generated = document.getElementById('generated')
+generated = document.getElementById('generated');
 
-fieldValidation()
+fieldValidation();
 
 function fieldValidation(gen) {
     let r = document.getElementById('red').value || 0;
@@ -26,13 +26,42 @@ function swapColorContainer(rgb) {
 function addColorBox(rgb) {
     const colorBox = document.createElement('div');
     colorBox.style.backgroundColor = rgb;
-    colorBox.className = 'color-container';
+    colorBox.className = 'color-box';
+    colorBox.id = 'colorBox';
 
     colorBox.onclick = function() {
         document.body.style.backgroundColor = colorBox.style.backgroundColor;
     }
-    overflow = document.getElementById('generated').childElementCount
-    overflow < 6 ? generated.appendChild(colorBox) : 0;
+
+
+    generated.appendChild(colorBox);
+    overflow = document.getElementById('generated').childElementCount;
+    overflow > 6 ? document.getElementById('scroller').style.display = 'flex' : 0;
 }
 
 
+
+function nextColorBox() {
+    Boxes = document.getElementsByClassName('color-box');
+    overflow = document.getElementById('generated').childElementCount;
+    last = Boxes[overflow - 1].style.backgroundColor;
+    t2 = Boxes[0].style.backgroundColor;
+    for (let i = 0; i < overflow - 1; i++) {
+        t1 = Boxes[i + 1].style.backgroundColor;
+        Boxes[i + 1].style.backgroundColor = t2;
+        t2 = t1;
+
+    }
+    Boxes[0].style.backgroundColor = last
+}
+
+function prevColorBox() {
+    Boxes = document.getElementsByClassName('color-box');
+    overflow = document.getElementById('generated').childElementCount;
+    first = Boxes[0].style.backgroundColor;
+
+    for (let i = 1; i <= overflow - 1; i++) {
+        Boxes[i - 1].style.backgroundColor = Boxes[i].style.backgroundColor;
+    }
+    Boxes[overflow - 1].style.backgroundColor = first;
+}
