@@ -60,6 +60,8 @@ function prevColorBox() {
     overflow = document.getElementById('generated').childElementCount;
     first = Boxes[0].style.backgroundColor;
 
+    Boxes[1].style.backgroundColor = 'red'
+
     for (let i = 1; i <= overflow - 1; i++) {
         Boxes[i - 1].style.backgroundColor = Boxes[i].style.backgroundColor;
     }
