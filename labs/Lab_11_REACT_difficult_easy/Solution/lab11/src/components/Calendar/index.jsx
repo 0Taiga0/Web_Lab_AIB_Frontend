@@ -78,26 +78,28 @@ const Calendar = ({todoData}) => {
                                         }}
                                         > 
                                             <Link 
-                                            to={`/about/${date.getDate()}/${date.getFullYear()}/${date.getMonth()}`} 
-                                            style={{ color: 'inherit', textDecoration: 'inherit'}} 
-                                            key={date.getDate()} 
-                                            className="dayContent"
-                                            >
-                                                <div>
-                                                    <p className="dayNum">{date.getDate()}</p>
-                                                </div>
-                                                {todo.map( (td, idx) => 
-                                                    td.date.getDate() === date.getDate() 
-                                                    ?
-                                                    <div key={idx} className="textContent">
-                                                        <h5>{td.tasks[0]}</h5>
-                                                        <h5>{td.tasks[1]}</h5>
-                                                        <p className="desc">{td.desc[0]}</p>
-                                                        <p className="time">{td.time[0]}</p>
+                                                to={`/about/${date.getDate()}/${date.getFullYear()}/${date.getMonth()}`} 
+                                                style={{ color: 'inherit', textDecoration: 'inherit'}} 
+                                                key={date.getDate()} 
+                                                className="dayContent"
+                                                >
+                                                    <div>
+                                                        <p className="dayNum">{date.getDate()}</p>
                                                     </div>
-                                                    :
-                                                    <div key={idx} />
-                                                )}
+                                                    {todo.map( (td, idx) => 
+                                                        td.date.getDate() === date.getDate() 
+                                                        ?
+                                                        <div key={idx} className="textContent">
+                                                            <h5>{td.tasks[0]}</h5>
+                                                            <h5>{td.tasks[1]}</h5>
+                                                            <p className="desc">{td.desc[0]}</p>
+                                                            <p className="time">{td.time[0]}</p>
+                                                            {console.log(td.tasks.length)}
+                                                            {td.tasks.length > 2 ? <div className="moreTasks"><div>{`+${td.tasks.length - 2}`}</div></div> : <div></div>}
+                                                        </div>
+                                                        :
+                                                        <div key={idx} />
+                                                    )}
                                             </Link>
                                         </td>
                                         :

@@ -35,6 +35,7 @@ table {
 
 .textContent {
     margin-top: 15px;
+    width: 100%;
 }
 
 .textContent p, h5{
@@ -92,5 +93,12 @@ table {
     text-align: center;
     width: 100px;
     height: 35px;
+}
+
+.moreTasks {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 700;
 }
 

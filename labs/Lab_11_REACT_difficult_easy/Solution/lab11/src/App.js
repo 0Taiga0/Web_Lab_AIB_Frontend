@@ -8,9 +8,9 @@ function App() {
   const [todoData, setData] = useState([
     {
         date: new Date(2023, 11, 5), 
-        tasks: ['Группа Лифт', 'Курс: Python Pro'], 
-        desc: ['Какая-то группа лифт(рок наверное)', 'Курс по Python'], 
-        time: ['15:00-17:30', '12:25-14:00'],
+        tasks: ['Группа Лифт', 'Курс: Python Pro', 'React Front'], 
+        desc: ['Какая-то группа лифт(рок наверное)', 'Курс по Python', 'Курсы по React'], 
+        time: ['15:00-17:30', '12:25-14:00', '18:00-20:00'],
     },
     {
         date: new Date(2023, 11, 29), 
@@ -30,6 +30,18 @@ function App() {
         desc: ['Какая-то группа лифт(рок наверное)', 'Курс по Python'], 
         time: ['15:00-17:30', '12:25-14:00'],
     },
+    {
+      date: new Date(2023, 10, 15), 
+      tasks: ['Группа Лифт', 'Курс: Python Pro'], 
+      desc: ['Какая-то группа лифт(рок наверное)', 'Курс по Python'], 
+      time: ['15:00-17:30', '12:25-14:00'],
+    },
+    {
+    date: new Date(2023, 10, 11), 
+    tasks: ['Группа Лифт', 'Курс: Python Pro'], 
+    desc: ['Какая-то группа лифт(рок наверное)', 'Курс по Python'], 
+    time: ['15:00-17:30', '12:25-14:00'],
+    },
 ])
 
 
@@ -37,7 +49,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main todoData={todoData}/>}/>
-        <Route path='/about/:day/:year/:month' element={<About/>}/>
+        <Route path='/about/:day/:year/:month' element={<About todoData={todoData} setData={setData}/>}/>
       </Routes>
     </BrowserRouter>
   );
