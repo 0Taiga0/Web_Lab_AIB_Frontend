@@ -38,7 +38,7 @@ const ToDoForm = ({addTask}) => {
             placeholder='Время'
             ></input>
 
-            <button onClick={e => addNewTask(e)}>Создать пост</button>
+            <button onClick={e => addNewTask(e)}>Создать заметку</button>
       </form>
     )
 
