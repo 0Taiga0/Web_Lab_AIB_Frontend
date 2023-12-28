@@ -1,7 +1,7 @@
 from datetime import datetime
 from base import BaseXlsBlock
 from collections import Counter
-from config import FULL_DATE_FORMAT, DATE_FORMAT
+from config import FULL_DATE_FORMAT, DATE_FORMAT, CLIENTS, FIO
 
 
 class HeaderBlock(BaseXlsBlock):
@@ -71,7 +71,7 @@ class QuartetPaymentBlock(BaseXlsBlock):
             self.col += 1
             most_common = Counter(quarter).most_common()[:10]
             for idx, most in enumerate(most_common):
-                self.worksheet.write(self.row + idx, self.col, f'{idx + 1}. {self.data['clients'][most[0] - 1]['fio']}',
+                self.worksheet.write(self.row + idx, self.col, f'{idx + 1}. {self.data[CLIENTS][most[0] - 1][FIO]}',
                                      cell_format)
 
 
@@ -137,9 +137,9 @@ class BankAccountBlock(BaseXlsBlock):
         rich = sorted(account_balances.items(), key=lambda x: x[1], reverse=True)[:10]
 
         for idx, debtor in enumerate(debtors):
-            self.worksheet.write(self.row + idx, 1, f'{idx + 1}. {self.data['clients'][debtor[0] - 1]['fio']}',
+            self.worksheet.write(self.row + idx, 1, f'{idx + 1}. {self.data[CLIENTS][debtor[0] - 1][FIO]}',
                                  cell_format)
             self.worksheet.write(self.row + idx, 2, debtor[1], cell_format)
-            self.worksheet.write(self.row + idx, 3, f'{idx + 1}. {self.data['clients'][rich[idx][0] - 1]['fio']}',
+            self.worksheet.write(self.row + idx, 3, f'{idx + 1}. {self.data[CLIENTS][rich[idx][0] - 1][FIO]}',
                                  cell_format)
             self.worksheet.write(self.row + idx, 4, rich[idx][1], cell_format)
