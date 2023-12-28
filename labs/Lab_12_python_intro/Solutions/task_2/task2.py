@@ -1,3 +1,4 @@
+
 def sum_median(arr):
     count = 0
     for item in arr:
