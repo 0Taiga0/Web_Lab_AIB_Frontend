@@ -1,11 +1,11 @@
 from heapq import heappop, heappush
 
 
-def medians_sum(numbers: list) -> int:
+def medians_sum(numList: list) -> int:
     mediansSum = 0
     firstHalf, secondHalf = [], []
-    for number in numbers:
-        heappush(firstHalf, -number)
+    for num in numList:
+        heappush(firstHalf, -num)
         heappush(secondHalf, -heappop(firstHalf))
         if len(firstHalf) < len(secondHalf):
             heappush(firstHalf, -heappop(secondHalf))
@@ -14,5 +14,5 @@ def medians_sum(numbers: list) -> int:
 
 
 if __name__ == "__main__":
-    arr = [5, 10, 8, 1, 7, 3, 9, 6, 2, 4]
-    print(medians_sum(arr))
+    numList = [5, 10, 8, 1, 7, 3, 9, 6, 2, 4]
+    print(medians_sum(numList))
