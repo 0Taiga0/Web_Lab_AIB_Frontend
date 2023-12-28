@@ -1,12 +1,15 @@
-import xlsxwriter
+from pathlib import PurePath
 import json
 from datetime import datetime
 from writer import XlsAnalyticPaymentWriter
 
 if __name__ == '__main__':
-    with open('clients.json', 'r', encoding='utf-8') as f:
+    clientPath = PurePath('../clients.json')
+    paymentsPath = PurePath('../payments.json')
+
+    with open(clientPath, 'r', encoding='utf-8') as f:
         data_clients = json.load(f)
-    with open('payments.json', 'r', encoding='utf-8') as f:
+    with open(paymentsPath, 'r', encoding='utf-8') as f:
         data_payments = json.load(f)
     data = {'clients': data_clients['clients'], 'payments': data_payments['payments']}
 
