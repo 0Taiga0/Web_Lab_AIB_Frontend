@@ -1,7 +1,7 @@
-import xlsxwriter
 from datetime import datetime
 from base import BaseXlsBlock
 from collections import Counter
+from config import FULL_DATE_FORMAT, DATE_FORMAT
 
 
 class HeaderBlock(BaseXlsBlock):
@@ -26,12 +26,12 @@ class HeaderBlock(BaseXlsBlock):
             {'bold': True, 'font_size': '10', 'border': 3, 'align': 'center', 'font_name': 'Arial',
              'bg_color': '#c5d9f1'})
         maxDate, minDate = datetime(1, 1, 1), datetime(3000, 12, 31)
-        self.worksheet.write(self.row, 0, datetime.now().strftime('%Y-%m-%d'), subheader_format)
+        self.worksheet.write(self.row, 0, datetime.now().strftime(DATE_FORMAT), subheader_format)
         for payData in self.data['payments']:
             maxDate = max(datetime(*list(map(int, payData["created_at"][:10].split('-')))), maxDate)
             minDate = min(datetime(*list(map(int, payData["created_at"][:10].split('-')))), minDate)
 
-        self.worksheet.write(self.row, 1, f'{minDate.strftime('%Y-%m-%d')} - {maxDate.strftime('%Y-%m-%d')}',
+        self.worksheet.write(self.row, 1, f'{minDate.strftime(DATE_FORMAT)} - {maxDate.strftime(DATE_FORMAT)}',
                              subheader_format)
 
 
@@ -63,7 +63,7 @@ class QuartetPaymentBlock(BaseXlsBlock):
         }
         for payment in self.data['payments']:
             client_id = payment['client_id']
-            created_at = datetime.strptime(payment['created_at'], "%Y-%m-%dT%H:%M:%S.%fZ")
+            created_at = datetime.strptime(payment['created_at'], FULL_DATE_FORMAT)
             quarter = f'Q{(created_at.month - 1) // 3 + 1} {created_at.year}'
             quarters[quarter].append(client_id)
 

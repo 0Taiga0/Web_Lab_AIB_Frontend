@@ -1,6 +1,4 @@
 import xlsxwriter
-from datetime import datetime
-from base import BaseXlsBlock
 from block import (
     HeaderBlock,
     QuartetPaymentBlock,
