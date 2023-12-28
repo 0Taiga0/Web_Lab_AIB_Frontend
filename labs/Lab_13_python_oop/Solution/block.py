@@ -117,10 +117,13 @@ class BankAccountBlock(BaseXlsBlock):
             {'bold': True, 'font_size': '14', 'border': 2, 'align': 'center', 'font_name': 'Arial',
              'bg_color': '#fcd5b4'})
         subheader_format = self.workbook.add_format(
-            {'bold': True, 'font_size': '10', 'border': 3, 'align': 'center', 'font_name': 'Arial',
+            {'bold': True, 'font_size': '10', 'border': 3, 'align': 'center', 'align': 'vcenter', 'font_name': 'Arial',
              'bg_color': '#c5d9f1'})
+        self.worksheet.merge_range("A35:A36", self.colNames[0], subheader_format)
+        self.worksheet.merge_range("B35:C35", "Задолжности", subheader_format)
+        self.worksheet.merge_range("D35:E35", "Прибыльность", subheader_format)
         self.worksheet.write(self.row, self.col, self.NAME, header_format)
-        self.row += 1
+        self.row += 2
         for idx, name in enumerate(self.colNames):
             self.worksheet.write(self.row, idx, name, subheader_format)
         self.row += 1
