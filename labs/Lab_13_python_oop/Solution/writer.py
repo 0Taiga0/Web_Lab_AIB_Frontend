@@ -1,7 +1,13 @@
 import xlsxwriter
 from datetime import datetime
 from base import BaseXlsBlock
-from block import HeaderBlock, QuartetPaymentBlock, CustomerGeographyBlock, BankAccountBlock
+from block import (
+    HeaderBlock,
+    QuartetPaymentBlock,
+    CustomerGeographyBlock,
+    BankAccountBlock,
+)
+
 
 class XlsAnalyticPaymentWriter:
     ANALYTICS_BLOCKS_CLASSES = [
@@ -16,7 +22,7 @@ class XlsAnalyticPaymentWriter:
 
     def write_excel_report(self, output_file):
         workbook = xlsxwriter.Workbook(output_file)
-        worksheet = workbook.add_worksheet('analytics')
+        worksheet = workbook.add_worksheet("analytics")
         worksheet.set_column(0, 0, 40)
         worksheet.set_column(1, 5, 40)
 
